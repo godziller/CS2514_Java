@@ -33,3 +33,48 @@ Write a program in Java to check two strings are anagram or not
 # Program 6
 
 You are asked to write a discount system for a beauty saloon, which provides services and sells beauty products. It offers 3 types of memberships: Premium, Gold and Silver. Premium, gold and silver members receive a discount of 20%, 15%, and 10%, respectively, for all services provided. Customers without membership receive no discount. All members receives a flat 10% discount on products purchased (this might change in future). Your system shall consist of three classes: Customer, Discount and Visit, as shown in the class diagram. It shall compute the total bill if a customer purchases $x of products and $y of services, for a visit. Also write a test program to exercise all the classes.
+
+```mermaid
+classDiagram
+    class Customer {
+        -name: String
+        -member: boolean = false
+        -memberType: String
+        +Customer(name: String)
+        +getName(): String
+        +isMember(): boolean
+        +setMember(member: boolean): void
+        +getMemberType(): String
+        +setMemberType(type: String): void
+        +toString(): String
+    }
+
+    class Visit {
+        -customer: Customer
+        -date: Date
+        -serviceExpense: double
+        -productExpense: double
+        +Visit(name: String, date: Date)
+        +getName(): String
+        +getServiceExpense(): double
+        +setServiceExpense(ex: double): void
+        +getProductExpense(): double
+        +setProductExpense(ex: double): void
+        +getTotalExpense(): double
+        +toString(): String
+    }
+
+    class DiscountRate {
+        -serviceDiscountPremium: double = 0.2
+        -serviceDiscountGold: double = 0.15
+        -serviceDiscountSilver: double = 0.1
+        -productDiscountPremium: double = 0.1
+        -productDiscountGold: double = 0.1
+        -productDiscountSilver: double = 0.1
+        +getServiceDiscountRate(type: String): double
+        +getProductDiscountRate(type: String): double
+    }
+
+    Customer "1" -- "1" Visit : has
+    Visit "1" -- "1" DiscountRate : uses
+```
