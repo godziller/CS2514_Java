@@ -75,6 +75,5 @@ classDiagram
         +getProductDiscountRate(type: String): double
     }
 
-    Customer "1" -- "1" Visit : has
-    Visit "1" -- "1" DiscountRate : uses
+    Customer "1" o-- "1" Visit : has
 ```
