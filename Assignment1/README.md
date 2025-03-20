@@ -14,13 +14,13 @@ Print Pattern
 
 ```
 
-        *
+    *
 
-      **
+   **
 
-    ***
+  ***
 
-  ****
+ ****
 
 *****
 ```
@@ -34,7 +34,7 @@ Example: For number of rows=5
 
 ```
 
-   *
+  *
 
  ***
 
@@ -42,7 +42,7 @@ Example: For number of rows=5
 
  ***
 
-   *
+  *
 ```
 
 NOTE: All programs are from class assignments (2+ 1 mark for correct styling as given in UCC book of modules)
