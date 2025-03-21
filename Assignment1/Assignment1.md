@@ -16,6 +16,8 @@
     I --> K
     J --> K
 ```
+![CheckLeapYear.png](CheckLeapYear.png)
+
 # Flow chart for Program 2 - Binary Adder
 
 ```mermaid
@@ -39,3 +41,4 @@ flowchart TD
 
     class A,Q startend;
 ```
+![BinaryAdder.png](BinaryAdder.png)
