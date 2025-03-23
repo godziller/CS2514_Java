@@ -92,3 +92,115 @@ public class OrderNames{
 }
 
 ```
+
+# Program 2 - Division
+
+```mermaid
+graph TD
+    A[Start] --> B[Create Scanner object for user input]
+    B --> C[Get dividend input numerator]
+    C --> D[Call getIntegerInput to get valid dividend]
+
+    subgraph GetIntegerInput[Function: getIntegerInput]
+        D1[Prompt user for input: Enter the dividend numerator]
+        D2[Check if input is a valid integer]
+        D3[If valid, return the number]
+        D4[If invalid, display error and prompt again]
+        D1 --> D2
+        D2 -->|Valid| D3
+        D2 -->|Invalid| D4
+        D4 --> D1
+    end
+
+    D3 --> E[Get divisor input denominator]
+    E --> F[Call getDivisorInput to get valid divisor]
+
+    subgraph GetDivisorInput[Function: getDivisorInput]
+        F1[Prompt user for input: Enter the divisor non-zero]
+        F2[Check if input is valid integer]
+        F3[If divisor is not zero, return the divisor]
+        F4[If divisor is zero, display error and prompt again]
+        F1 --> F2
+        F2 -->|Valid| F3
+        F2 -->|Zero| F4
+        F4 --> F1
+    end
+
+    F3 --> G[Perform division quotient and remainder]
+    G --> H[Display quotient and remainder]
+    H --> I[Close the scanner]
+    I --> J[End]
+
+
+
+```
+
+```java
+import java.util.Scanner;
+
+public class Division {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // When I ask for the user input I need to make sure its Real numbers
+        // and also ensure the Divisor is not zero.
+        // So we introduce two methors to handle this checking..
+
+        // Get the dividend (numerator)
+        int dividend = getIntegerInput(scanner, "Enter the dividend (numerator): ");
+
+        // Get the divisor (denominator)
+        int divisor = getDivisorInput(scanner);
+
+        // Perform the division and output the result
+        int quotient = dividend / divisor;
+        int remainder = dividend % divisor;
+
+        System.out.println("Quotient: " + quotient);
+        System.out.println("Remainder: " + remainder);
+
+        scanner.close();
+    }
+
+    // Method to get a valid integer input
+    public static int getIntegerInput(Scanner scanner, String prompt) {
+        int number = 0;
+        boolean valid = false;
+
+        // Going to loop until I get valid integer from user
+        while (!valid) {
+            System.out.print(prompt);
+            if (scanner.hasNextInt()) {
+                number = scanner.nextInt();
+                valid = true;
+            } else {
+                System.out.println("Error: Please enter a valid integer.");
+                scanner.next(); // clear the invalid input
+            }
+        }
+        return number;
+    }
+
+    // Method to get a valid divisor.
+    // This also has to handle the divide by zero issue where the numerator did not.
+    public static int getDivisorInput(Scanner scanner) {
+        int divisor = 0;
+        boolean valid = false;
+
+        // Going to loop until I get valid integer from user
+        while (!valid) {
+            divisor = getIntegerInput(scanner, "Enter the divisor (non-zero): ");
+
+            if (divisor == 0) {
+                System.out.println("Error: Divisor cannot be zero. Please try again.");
+            } else {
+                valid = true;
+            }
+        }
+        return divisor;
+    }
+}
+
+
+```
