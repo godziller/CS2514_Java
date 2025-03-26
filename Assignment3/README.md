@@ -2,7 +2,8 @@ Kindly submit one single pdf document with (i) program code that has appropriate
 
 # Program 1
 
-Write a program in JAVA to create a 3D array (containing integer values) and display it on the console. Then input a number from user and check whether it is present.
+Write a program in JAVA to create a 3D array (containing integer values) and display it on the console. Then input a 
+number from user and check whether it is present.
 
 # Program 2
 
