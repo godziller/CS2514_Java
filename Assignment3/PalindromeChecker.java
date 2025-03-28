@@ -9,13 +9,13 @@ public class PalindromeChecker {
 	
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.print("Enter a string to check for palindrome");
+		System.out.print("Enter a string to check for palindrome: ");
 		String input = scanner.nextLine().toLowerCase().replaceAll("[^a-z0-9]", "");
 
 		if (isPalindrome(input)){
 			System.out.println(input + " is a palindrome!");
 		} else {
-			System.out.println(input + "us NOT a palindrome ... :(");
+			System.out.println(input + " is NOT a palindrome ... :(");
 		}
 
 		scanner.close();
@@ -27,7 +27,7 @@ public class PalindromeChecker {
 		Queue<Character> queue = new LinkedList<>();
 
 		// Push characters onto the stack and queue
-		for (int i = 0; i <= str.length(); i++){
+		for (int i = 0; i < str.length(); i++){
 			char c = str.charAt(i);
 			stack.push(c);
 			queue.add(c);

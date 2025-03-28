@@ -25,7 +25,7 @@ public class AnagramChecker{
 	public static boolean areAnagrams(String str1, String str2){
 	
 		String s1 = str1.replaceAll("\\s", "").toLowerCase();
-		String s2 = str1.replaceAll("\\s", "").toLowerCase();
+		String s2 = str2.replaceAll("\\s", "").toLowerCase();
 
 		if (s1.length() != s2.length()) {
 			return false;
