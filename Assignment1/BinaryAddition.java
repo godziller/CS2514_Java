@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+// Class to add two user inputted Binary numbers
 public class BinaryAddition{
     public static void main(String[] args){
         // Open scanner object.
@@ -43,8 +44,6 @@ public class BinaryAddition{
         // Close scanner.
         myScanner.close();
     }
-
-
 
     // Ok, a string coming in, so need to check if its only 1's and O's
     public static boolean isValidBinary(String binary) {

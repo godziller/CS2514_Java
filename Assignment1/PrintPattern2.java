@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+// Class to print a diamond.
 public class PrintPattern2 {
 	public static void main(String[] args) {
 

@@ -1,4 +1,4 @@
-//PrintPattern1
+//PrintPattern Class to print a right orientated triangle
 public class PrintPattern1{
 	public static void main(String[] args){
 	

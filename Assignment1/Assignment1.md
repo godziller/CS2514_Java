@@ -1,8 +1,18 @@
-# Flow chart for Program 1 - Leap year Checker
+# Program 1 
+Consider a particular year like 2015 and write a program in Java to check whether it is a leap year or not
+## Terminal Out
+
+![CheckLeapYear_terminal.png](CheckLeapYear_terminal.png)
+
+## Flow Diagram
+![LeapYear_FD.png](LeapYear_FD.png)
+
+## Source Code
 
 ```java
 import java.util.Scanner;
 
+// Class to check if a user inputted year is leap or not.
 public class CheckLeapYear {
     public static void main(String[] args){
         // Create a scanner object.
@@ -35,8 +45,7 @@ public class CheckLeapYear {
     // Assums the caller passes a correct into - 0000->9999
 
     public static boolean isLeapYear(int year) {
-        // A year is a leap year if it is divisible by 4, but not divisible by 100 unless 
-        //it is also divisible by 400..
+        // A year is a leap year if it is divisible by 4, but not divisible by 100 unless it is also divisible by 400..
         return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
     }
 
@@ -60,32 +69,19 @@ public class CheckLeapYear {
         return false;
     }
 }
-
 ```
+# Program 2
+Consider two binary numbers like 1010 and 1101 and write a program in Java to add the two numbers
 
-```mermaid
-
- flowchart TD
-    A[Start] --> B[Create Scanner Object]
-    B --> C[Print Please enter your year]
-    C --> D[Read input as string]
-    D --> E{Is yearStr a valid 4-digit year?}
-    E -->|Yes| F[Convert yearStr to integer]
-    E -->|No| G[Print Invalid year format]
-    F --> H{Is year a leap year?}
-    H -->|Yes| I[Print year is a leap year]
-    H -->|No| J[Print year is NOT a leap year]
-    G --> K[End]
-    I --> K
-    J --> K
-```
-![CheckLeapYear.png](CheckLeapYear.png)
-
-# Flow chart for Program 2 - Binary Adder
-
+## Terminal Out
+![BinaryAdder_terminal.png](BinaryAdder_terminal.png)
+## Flow Diagram
+![BinaryAdder_FD.png](BinaryAdder_FD.png)
+## Source Code
 ```java
 import java.util.Scanner;
 
+// Class to add two user inputted Binary numbers
 public class BinaryAddition{
     public static void main(String[] args){
         // Open scanner object.
@@ -130,8 +126,6 @@ public class BinaryAddition{
         myScanner.close();
     }
 
-
-
     // Ok, a string coming in, so need to check if its only 1's and O's
     public static boolean isValidBinary(String binary) {
         // Check each character in the string
@@ -147,40 +141,23 @@ public class BinaryAddition{
 }
 
 ```
-
-```mermaid
-flowchart TD
-    A[Start] --> B[Create Scanner Object]
-    B --> C[Print 'Enter first binary number']
-    C --> D[Read first binary input]
-    D --> E{Is binary1 valid?}
-    E -->|No| F[Print 'Invalid binary number and exit']
-    E -->|Yes| G[Print 'Enter second binary number']
-    G --> H[Read second binary input]
-    H --> I{Is binary2 valid?}
-    I -->|No| J[Print 'Invalid binary number and exit']
-    I -->|Yes| K[Convert binary1 to decimal]
-    K --> L[Convert binary2 to decimal]
-    L --> M[Calculate sumDecimal = num1 + num2]
-    M --> N[Convert sumDecimal to binary]
-    N --> O[Print 'The Sum in binary: sumBinary']
-    O --> P[Print 'The Sum in decimal: sumDecimal']
-    P --> Q[Close scanner and End]
-
-    class A,Q startend;
+# Program 3
+Print Pattern
 ```
-![BinaryAdder.png](BinaryAdder.png)
-
-# Printing Patter for Program 3
+    *
+   **
+  ***
+ ****
+*****
+```
+## Terminal Out
+![PrintPattern1_terminal.png](PrintPattern1_terminal.png)
+## Flow Diagram
+![PrintPattern1_FD.png](PrintPattern1_FD.png)
+## Source Code
 
 ```java
-//PrintPattern1 - program prints out the following:
-//    *
-//   **
-//  ***
-// ****
-//*****
-
+//PrintPattern Class to print a right orientated triangle
 public class PrintPattern1{
 	public static void main(String[] args){
 	
@@ -208,25 +185,95 @@ public class PrintPattern1{
 	}
 }
 
-```
 
-```mermaid
-
-flowchart TD
-    A[Start] --> B[Initialize rows = 5]
-    B --> C[Start Outer Loop i = 1 to rows]
-    C --> D[Initialize rowString as empty]
-    D --> E[Start Inner Loop for spaces j = rows - i to 1]
-    E --> F[Append space to rowString]
-    F --> G[End Inner Loop for spaces]
-    G --> H[Start Inner Loop for stars k = 1 to i]
-    H --> I[Append star to rowString]
-    I --> J[End Inner Loop for stars]
-    J --> K[Print rowString]
-    K --> L[Increment i]
-    L --> M[Check if i <= rows]
-    M --> C
-    M --> N[End Outer Loop]
-    N --> O[End]
 ```
-![PrintPattern1.png](PrintPattern1.png)
+# Program 4
+Enter number of rows from the user and display a diamond shaped pattern
+
+## Terminal Out
+![PrintPattern2_terminal.png](PrintPattern2_terminal.png)
+## Flow Diagram
+![PrintPattern2_FD.png](PrintPattern2_FD.png)
+## Source Code
+
+```java
+import java.util.Scanner;
+
+// Class to print a diamond.
+public class PrintPattern2 {
+	public static void main(String[] args) {
+
+		// Create a Scanner object to get user input
+		Scanner scanner = new Scanner(System.in);
+
+		// Ask the user for the number of rows
+		System.out.print("Enter the number of rows: ");
+		int rows = scanner.nextInt();
+
+		// Close the scanner after use
+		scanner.close();
+
+		// If the number of rows is even, rounding to nearest odd number (rows + 1)
+		if (rows % 2 == 0) {
+			System.out.println("Printing diamond requires an odd number. Using " + (rows + 1) + " rows instead.");
+			rows = rows + 1;  // Increase by 1 to make it odd
+		}
+
+		// This is why I need odd rows....
+		int mid = rows / 2;  // Midpoint to split the diamond
+
+		// Going to break this into two parts - the top half of the diamond
+		// then the bottom part of the diamond...
+
+		// Top part of the diamond (including the middle row)
+		// i drives down to the middle, including the middle
+		for (int i = 0; i <= mid; i++) {
+			String rowBuffer = "";
+
+			// Add spaces before the stars
+			for (int j = 0; j < mid - i; j++) {
+				rowBuffer = rowBuffer + ' ';
+			}
+
+			// Add stars. I need stars to increment in odd numbers
+			// so row 1 will have *
+			// row 2 will have *** (3)
+			// row 3 will have **** (5)
+			// i, the row index here drives the above via (2*i+1)
+			for (int k = 0; k < 2 * i + 1; k++) {
+				rowBuffer = rowBuffer + '*';
+			}
+
+			// Print the row
+			System.out.println(rowBuffer);
+		}
+
+		// Bottom part of the diamond
+		// i here drives down the remainder of the diamond, but the
+		// middle is handled earlier.
+		for (int i = mid - 1; i >= 0; i--) {
+			String rowBuffer = "";
+
+			// Add spaces before the stars
+			for (int j = 0; j < mid - i; j++) {
+				rowBuffer = rowBuffer + ' ';
+			}
+
+			// Add stars
+			// Add stars. I need stars to increment in odd numbers
+			// row 3 will have **** (5)
+			// row 2 will have *** (3)
+			// so row 1 will have *
+
+			// i, the row index here drives the above via (2*i+1)
+			for (int k = 0; k < 2 * i + 1; k++) {
+				rowBuffer = rowBuffer + '*';
+			}
+
+			// Print the row
+			System.out.println(rowBuffer);
+		}
+	}
+}
+
+```
