@@ -1,14 +1,20 @@
+
+// Class to represent Customer.
+// Standard name parameter, but with additional attributes for
+// Membership information.
 public class Customer {
 	private String name;
 	private String memberType;
 	private boolean member;
 
+	// Constructor for Customer
 	public Customer(String name) {
 		this.name = name;
 		this.member = false;
 		this.memberType = "None";
 	}
 
+	// Simple getter/setter methods.
 	public String getName() {
 		return name;
 	}
@@ -30,6 +36,7 @@ public class Customer {
 		this.member = !memberType.equals("None");
 	}
 
+	// Using override java annotation to make code usage more intutitive.
 	@Override
 	public String toString() {
 		return "Customer: " + name +
