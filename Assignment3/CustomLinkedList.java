@@ -1,3 +1,5 @@
+
+// Custom Single Linked-List Class diagram.
 public class CustomLinkedList{
 
 	Node head;	// Reference to head of the list

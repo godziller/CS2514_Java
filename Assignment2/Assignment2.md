@@ -1,45 +1,15 @@
 # Program 1
+Write a program in JAVA that inputs 10 arbitrary names from the user and prints them in alphabetically.
 
-```mermaid
-graph TD
-    A[Start] --> B[Create Scanner object for user input]
-    B --> C[Loop 10 times to get 10 names]
-
-    subgraph InputLoop[Input Loop]
-        C1[Ask for name input]
-        C2[Store name in ArrayList]
-        C3[Repeat for next name]
-
-        C1 --> C2
-        C2 --> C3
-        C3 --> C1
-    end
-
-    C --> InputLoop
-    InputLoop --> D[Close the scanner]
-    D --> E[Call bubbleSort to sort names]
-
-subgraph BubbleSort[Bubble Sort Algorithm]
-F1[Outer loop: Pass through the list n-1 times]
-F2[Inner loop: Compare adjacent names]
-F3[If names are out of order, swap them]
-F4[Repeat the inner loop until sorted]
-
-F1 --> F2
-F2 --> F3
-F3 --> F4
-F4 --> F2
-F4 --> F1
-end
-
-E --> BubbleSort
-BubbleSort --> L[End of sorting, print sorted names]
-L --> M[Display sorted names]
-M --> N[End]
-```
-
+## Terminal Out
+![Program1_terminal.png](Program1_terminal.png)
+## Flowchart
+![Program1_FD.png](Program1_FD.png)
+## Source Code
 ```java
 import java.util.*;
+
+// Class to take 10 names from user and print out in order
 public class OrderNames{
     public static void main(String[] args){
         // make list buffer
@@ -92,52 +62,18 @@ public class OrderNames{
 }
 
 ```
+# Program 2
+Write a program in JAVA to input the dividend and divisor from the user and find the quotient and remainder
 
-# Program 2 - Division
-
-```mermaid
-graph TD
-    A[Start] --> B[Create Scanner object for user input]
-    B --> C[Get dividend input numerator]
-    C --> D[Call getIntegerInput to get valid dividend]
-
-    subgraph GetIntegerInput[Function: getIntegerInput]
-        D1[Prompt user for input: Enter the dividend numerator]
-        D2[Check if input is a valid integer]
-        D3[If valid, return the number]
-        D4[If invalid, display error and prompt again]
-        D1 --> D2
-        D2 -->|Valid| D3
-        D2 -->|Invalid| D4
-        D4 --> D1
-    end
-
-    D3 --> E[Get divisor input denominator]
-    E --> F[Call getDivisorInput to get valid divisor]
-
-    subgraph GetDivisorInput[Function: getDivisorInput]
-        F1[Prompt user for input: Enter the divisor non-zero]
-        F2[Check if input is valid integer]
-        F3[If divisor is not zero, return the divisor]
-        F4[If divisor is zero, display error and prompt again]
-        F1 --> F2
-        F2 -->|Valid| F3
-        F2 -->|Zero| F4
-        F4 --> F1
-    end
-
-    F3 --> G[Perform division quotient and remainder]
-    G --> H[Display quotient and remainder]
-    H --> I[Close the scanner]
-    I --> J[End]
-
-
-
-```
-
+## Terminal Out
+![Program2_terminal.png](Program2_terminal.png)
+## Flowchart
+![Program2_FD.png](Program2_FD.png)
+## Source Code
 ```java
 import java.util.Scanner;
 
+// Class to find the quotent and reminder for a division request
 public class Division {
 
     public static void main(String[] args) {
@@ -204,10 +140,14 @@ public class Division {
 
 
 ```
-![Program2.png](Program2.png)
+# Program 3
+Write a program in JAVA to calculate the power of a number, where the base and exponent are taken as input from the user
 
-## Program 3 - PowerOf
-
+## Terminal Out
+![Program3_terminal.png](Program3_terminal.png)
+## Flowchart
+![Program3_FD.png](Program3_FD.png)
+## Source Code
 ```java
 import java.util.Scanner;
 
@@ -260,14 +200,18 @@ public class PowerOf {
 }
 
 ```
+# Program 4
+Write a program in JAVA that adds two 3x3 matrices. The inputs of the matrices are given by the user.
 
-![Program3.png](Program3.png)
-
-# Program 4 Matrix Addition
-
+## Terminal Out
+![Program4_terminal.png](Program4_terminal.png)
+## Flowchart
+![Program4_FD.png](Program4_FD.png)
+## Source Code
 ```java
 import java.util.*;
 
+// Simple class for matrix addition of a fixed 3x3 matrix
 public class Matrix {
     public static void main(String[] args) {
         // Create scanner object.
@@ -357,5 +301,3 @@ public class Matrix {
 }
 
 ```
-
-![Matrix.png](Matrix.png)

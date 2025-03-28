@@ -1,6 +1,6 @@
 import java.util.*;
 
-// AnangramChecker checks to see if 2 strings given
+// Anangram Checker checks to see if 2 strings given
 // by a user are anagrams.
 public class AnagramChecker{
 	public static void main(String[] args){
@@ -22,7 +22,6 @@ public class AnagramChecker{
 		else {
 			System.out.println("Strings are not anagrams :( .");
 		}
-
 		scanner.close();
 	}
 

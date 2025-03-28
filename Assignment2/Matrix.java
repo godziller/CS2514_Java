@@ -1,5 +1,6 @@
 import java.util.*;
 
+// Simple class for matrix addition of a fixed 3x3 matrix
 public class Matrix {
     public static void main(String[] args) {
         // Create scanner object.

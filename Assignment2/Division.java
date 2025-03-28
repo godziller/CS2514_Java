@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+// Class to find the quotent and reminder for a division request
 public class Division {
 
     public static void main(String[] args) {

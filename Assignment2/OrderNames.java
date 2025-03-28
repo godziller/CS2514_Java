@@ -1,4 +1,6 @@
 import java.util.*;
+
+// Class to take 10 names from user and print out in order
 public class OrderNames{
     public static void main(String[] args){
         // make list buffer
